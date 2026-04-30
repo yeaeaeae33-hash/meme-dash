@@ -1,0 +1,37 @@
+name: Weekly Meme Trend Collector
+
+on:
+  schedule:
+    - cron: '0 5 * * 1'
+  workflow_dispatch:
+
+jobs:
+  collect-memes:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: 저장소 체크아웃
+        uses: actions/checkout@v4
+
+      - name: Python 설치
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 필요 패키지 설치
+        run: pip install anthropic
+
+      - name: 밈 트렌드 수집 실행
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/collect_memes.py
+
+      - name: 변경사항 커밋 & 푸시
+        run: |
+          git config --local user.email "meme-bot@github-actions.com"
+          git config --local user.name "Meme Trend Bot 🤖"
+          git add data/memes.json
+          git diff --staged --quiet || git commit -m "🔥 밈 트렌드 업데이트 - $(date +'%Y년 %m월 %d일')"
+          git push
