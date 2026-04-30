@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>밈 트렌드 위클리 대시보드</title>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0a0f; --surface: #12121a; --card: #1a1a26; --border: #2a2a3e;
+  --a1: #ff3cac; --a2: #784ba0; --a3: #2b86c5; --a4: #00f5d4; --a5: #ffe45e;
+  --text: #f0f0ff; --muted: #8888aa; --r: 14px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: 'Noto Sans KR', sans-serif; min-height: 100vh; }
+body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(255,60,172,.03) 1px, transparent 1px), linear-gradient(90deg,rgba(255,60,172,.03) 1px,transparent 1px); background-size: 40px 40px; pointer-events: none; z-index: 0; }
+
+.wrap { max-width: 1000px; margin: 0 auto; padding: 2rem 1.25rem 4rem; position: relative; z-index: 1; }
+
+/* 헤더 */
+.hdr { text-align: center; padding: 2.5rem 0 2rem; }
+.live-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--a4); border: 1px solid var(--a4); border-radius: 100px; padding: 4px 14px; margin-bottom: 1rem; }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: var(--a4); animation: pulse 1.8s ease-in-out infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:.3;transform:scale(.6);} }
+.hdr h1 { font-family: 'Black Han Sans', sans-serif; font-size: clamp(1.8rem, 5vw, 3.2rem); line-height: 1.1; background: linear-gradient(135deg, #ff3cac 0%, #784ba0 45%, #2b86c5 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: .5rem; }
+.hdr-meta { color: var(--muted); font-size: 13px; }
+.last-update { display: inline-block; margin-top: .6rem; font-size: 11px; color: var(--a4); background: #00f5d411; border: 1px solid #00f5d433; border-radius: 100px; padding: 2px 12px; }
+
+/* 주차 네비 */
+.week-nav { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; align-items: center; }
+.week-nav-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-right: 4px; }
+.week-btn { background: transparent; border: 1px solid var(--border); border-radius: 100px; color: var(--muted); font-family: 'Noto Sans KR', sans-serif; font-size: 12px; font-weight: 500; padding: 5px 14px; cursor: pointer; transition: all .2s; white-space: nowrap; }
+.week-btn:hover { color: var(--text); border-color: var(--a2); }
+.week-btn.on { background: linear-gradient(135deg, var(--a1), var(--a2)); border-color: transparent; color: #fff; font-weight: 700; }
+.week-btn.latest::after { content: ' 🔥'; }
+
+/* 탭 */
+.tabs { display: flex; gap: 8px; flex-wrap: wrap; border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1.8rem; }
+.tab { background: transparent; border: 1px solid var(--border); border-radius: 100px; color: var(--muted); font-family: 'Noto Sans KR', sans-serif; font-size: 13px; font-weight: 500; padding: 7px 16px; cursor: pointer; transition: all .2s; white-space: nowrap; }
+.tab:hover { color: var(--text); border-color: var(--a2); }
+.tab.on { background: linear-gradient(135deg, var(--a1), var(--a2)); border-color: transparent; color: #fff; font-weight: 700; }
+
+/* 패널 */
+.panel { display: none; }
+.panel.on { display: block; animation: fadeUp .3s ease; }
+@keyframes fadeUp { from{opacity:0;transform:translateY(8px);} to{opacity:1;transform:translateY(0);} }
+.sec-tag { font-size: 10px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--a1); margin-bottom: .4rem; }
+.sec-ttl { font-family: 'Black Han Sans', sans-serif; font-size: 1.6rem; margin-bottom: 1.3rem; }
+
+/* 트렌드 요약 바 */
+.summary-bar { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.summary-chip { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px; font-size: 12px; color: var(--muted); flex: 1; min-width: 120px; }
+.summary-chip .num { font-family: 'Black Han Sans', sans-serif; font-size: 1.6rem; display: block; color: var(--a4); line-height: 1; margin-bottom: 2px; }
+
+/* 밈 카드 그리드 */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin-bottom: 1.5rem; }
+.mcard { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 1.1rem 1.2rem; transition: all .22s; cursor: pointer; position: relative; overflow: hidden; }
+.mcard::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: var(--acc, linear-gradient(90deg, var(--a1), var(--a2))); }
+.mcard:hover { border-color: var(--a2); transform: translateY(-3px); box-shadow: 0 10px 28px rgba(255,60,172,.15); }
+.mcard:hover .hint { opacity: 1; }
+.hint { position: absolute; top: 10px; right: 12px; font-size: 10px; color: var(--a4); font-weight: 700; opacity: 0; transition: opacity .2s; }
+.mrank { font-family: 'Black Han Sans', sans-serif; font-size: 2.2rem; line-height: 1; color: var(--border); margin-bottom: 6px; }
+.badge { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 2px 9px; border-radius: 100px; margin-bottom: 7px; margin-right: 4px; }
+.kr { background: #ff3cac22; color: var(--a1); border: 1px solid #ff3cac44; }
+.gl { background: #00f5d422; color: var(--a4); border: 1px solid #00f5d444; }
+.status-new { background: #ff444422; color: #ff9999; border: 1px solid #ff444433; }
+.status-trending { background: #00f5d422; color: var(--a4); border: 1px solid #00f5d433; }
+.status-fading { background: #55557722; color: var(--muted); border: 1px solid #55557733; }
+.cname { font-weight: 700; font-size: .95rem; margin-bottom: 5px; line-height: 1.3; }
+.cdesc { font-size: 11.5px; color: var(--muted); line-height: 1.6; margin-bottom: 8px; }
+.corg { font-size: 10.5px; color: #555577; border-top: 1px solid var(--border); padding-top: 7px; }
+.weeks-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 10px; color: var(--a5); margin-top: 5px; }
+
+/* 트렌드 변화 탭 */
+.change-grid { display: flex; flex-direction: column; gap: 10px; }
+.change-row { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 1rem 1.2rem; display: grid; grid-template-columns: 28px 1fr auto; gap: 12px; align-items: center; }
+.change-rank { font-family: 'Black Han Sans', sans-serif; font-size: 1.4rem; color: var(--border); }
+.change-info .name { font-weight: 700; font-size: .9rem; margin-bottom: 3px; }
+.change-info .meta { font-size: 11px; color: var(--muted); }
+.change-tag { font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 100px; white-space: nowrap; }
+.tag-new { background: #ff3cac22; color: var(--a1); }
+.tag-up { background: #00f5d422; color: var(--a4); }
+.tag-same { background: #2b86c522; color: var(--a3); }
+.tag-down { background: #55557722; color: var(--muted); }
+.tag-out { background: #ff444422; color: #ff9999; }
+
+/* 모달 */
+.overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.78); z-index: 200; backdrop-filter: blur(6px); align-items: center; justify-content: center; padding: 1rem; }
+.overlay.show { display: flex; animation: fadeIn .2s ease; }
+@keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+.modal { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; max-width: 520px; width: 100%; max-height: 86vh; overflow-y: auto; animation: mUp .25s ease; }
+@keyframes mUp { from{transform:translateY(20px);opacity:0;} to{transform:translateY(0);opacity:1;} }
+.mtop { padding: 1.3rem 1.3rem .8rem; border-bottom: 1px solid var(--border); display: flex; gap: 12px; align-items: flex-start; }
+.mrnk { font-family: 'Black Han Sans', sans-serif; font-size: 2.8rem; line-height: 1; color: var(--border); min-width: 52px; }
+.mmeta { flex: 1; }
+.mname { font-family: 'Black Han Sans', sans-serif; font-size: 1.2rem; line-height: 1.2; margin-top: 5px; }
+.mclose { background: transparent; border: 1px solid var(--border); border-radius: 100px; color: var(--muted); font-size: 12px; padding: 4px 12px; cursor: pointer; transition: all .2s; white-space: nowrap; flex-shrink: 0; }
+.mclose:hover { border-color: var(--a1); color: var(--a1); }
+.mbody { padding: 1.1rem 1.3rem; }
+.mrow { display: flex; flex-direction: column; gap: 10px; }
+.mblk { background: var(--card); border-radius: 10px; padding: .85rem 1rem; }
+.mlbl { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--a1); margin-bottom: 4px; }
+.mtxt { font-size: 13px; color: var(--muted); line-height: 1.7; }
+.mtxt strong { color: var(--text); font-weight: 600; }
+.ptags { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 7px; }
+.ptag { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 100px; background: #2b86c522; color: var(--a3); border: 1px solid #2b86c544; }
+
+/* 로딩 */
+.loading { text-align: center; padding: 4rem 0; }
+.loading-spin { width: 40px; height: 40px; border: 3px solid var(--border); border-top-color: var(--a1); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 1rem; }
+@keyframes spin { to{transform:rotate(360deg);} }
+.loading p { color: var(--muted); font-size: 13px; }
+
+/* 힌트 */
+.hint-txt { font-size: 12px; color: var(--muted); margin-top: .8rem; }
+
+footer { text-align: center; padding-top: 2.5rem; font-size: 11px; color: #444466; letter-spacing: .05em; }
+
+@media(max-width: 580px) {
+  .grid { grid-template-columns: 1fr; }
+  .tabs { gap: 5px; }
+  .tab { font-size: 12px; padding: 6px 11px; }
+  .mrnk { font-size: 2rem; min-width: 40px; }
+  .summary-bar { gap: 8px; }
+}
+</style>
+</head>
+<body>
+
+<!-- 모달 -->
+<div class="overlay" id="overlay" onclick="closeOv(event)">
+  <div class="modal" id="modal">
+    <div class="mtop">
+      <div class="mrnk" id="m-rk"></div>
+      <div class="mmeta">
+        <div id="m-bd"></div>
+        <div class="mname" id="m-nm"></div>
+      </div>
+      <button class="mclose" onclick="closeOvD()">✕ 닫기</button>
+    </div>
+    <div class="mbody"><div class="mrow" id="m-body"></div></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="hdr">
+    <div class="live-badge"><span class="dot"></span>Auto Updated Every Monday</div>
+    <h1>밈 트렌드 위클리</h1>
+    <p class="hdr-meta">매주 월요일 오후 2시 자동 수집 · 국내/국외 TOP5</p>
+    <div class="last-update" id="last-update">로딩 중...</div>
+  </div>
+
+  <!-- 로딩 -->
+  <div class="loading" id="loading">
+    <div class="loading-spin"></div>
+    <p>최신 밈 데이터 불러오는 중...</p>
+  </div>
+
+  <!-- 본문 (데이터 로드 후 표시) -->
+  <div id="main-content" style="display:none">
+
+    <!-- 주차 선택 네비 -->
+    <div class="week-nav">
+      <span class="week-nav-label">📅 주차</span>
+      <div id="week-nav-btns"></div>
+    </div>
+
+    <!-- 요약 바 -->
+    <div class="summary-bar" id="summary-bar"></div>
+
+    <!-- 탭 -->
+    <div class="tabs">
+      <button class="tab on" onclick="swTab(0,this)">🇰🇷 국내 TOP5</button>
+      <button class="tab" onclick="swTab(1,this)">🌍 해외 TOP5</button>
+      <button class="tab" onclick="swTab(2,this)">📈 트렌드 변화</button>
+      <button class="tab" onclick="swTab(3,this)">📢 마케팅 팁</button>
+    </div>
+
+    <div class="panel on" id="p0">
+      <div class="sec-tag">Domestic Meme Trend</div>
+      <div class="sec-ttl">국내 유행 밈 TOP 5</div>
+      <div class="grid" id="kr-grid"></div>
+      <p class="hint-txt">💡 카드를 클릭하면 의미·유래·마케팅 활용법이 열려요!</p>
+    </div>
+
+    <div class="panel" id="p1">
+      <div class="sec-tag">Global Meme Trend</div>
+      <div class="sec-ttl">해외 유행 밈 TOP 5</div>
+      <div class="grid" id="gl-grid"></div>
+      <p class="hint-txt">💡 카드를 클릭하면 의미·유래·마케팅 활용법이 열려요!</p>
+    </div>
+
+    <div class="panel" id="p2">
+      <div class="sec-tag">Trend Change</div>
+      <div class="sec-ttl">이번 주 트렌드 변화</div>
+      <div id="change-domestic" style="margin-bottom:2rem">
+        <div style="font-size:12px;font-weight:700;color:var(--a1);letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem">🇰🇷 국내</div>
+        <div class="change-grid" id="change-kr"></div>
+      </div>
+      <div id="change-global">
+        <div style="font-size:12px;font-weight:700;color:var(--a4);letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem">🌍 해외</div>
+        <div class="change-grid" id="change-gl"></div>
+      </div>
+    </div>
+
+    <div class="panel" id="p3">
+      <div class="sec-tag">Marketing Tips</div>
+      <div class="sec-ttl">이번 주 마케팅 활용 팁</div>
+      <div id="mk-list"></div>
+    </div>
+
+  </div>
+</div>
+
+<footer id="footer-txt">밈 트렌드 위클리 · 매주 월요일 자동 업데이트 · Powered by Anthropic Claude</footer>
+
+<script>
+let allData = null;
+let currentWeekIdx = 0;
+let currentTab = 0;
+
+// memes.json 로드 (GitHub Pages에서 상대 경로로 fetch)
+async function loadData() {
+  try {
+    const res = await fetch('./data/memes.json?t=' + Date.now());
+    if (!res.ok) throw new Error('데이터 로드 실패');
+    allData = await res.json();
+    
+    // 최신 주차로 기본 설정
+    currentWeekIdx = allData.weeks.length - 1;
+    
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('main-content').style.display = 'block';
+    document.getElementById('last-update').textContent = '🔄 마지막 업데이트: ' + allData.meta.last_updated;
+    
+    buildWeekNav();
+    renderCurrentWeek();
+    
+  } catch (e) {
+    document.getElementById('loading').innerHTML = `
+      <p style="color:#ff7777">⚠️ 데이터를 불러올 수 없어요.<br>
+      <small style="color:var(--muted)">로컬에서 열면 fetch가 차단돼요. GitHub Pages URL로 접속해주세요.</small></p>`;
+  }
+}
+
+function buildWeekNav() {
+  const container = document.getElementById('week-nav-btns');
+  container.innerHTML = '';
+  allData.weeks.forEach((w, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'week-btn' + (i === currentWeekIdx ? ' on' : '') + (i === allData.weeks.length - 1 ? ' latest' : '');
+    btn.textContent = w.week_label;
+    btn.onclick = () => {
+      currentWeekIdx = i;
+      document.querySelectorAll('.week-btn').forEach((b, j) => b.classList.toggle('on', j === i));
+      renderCurrentWeek();
+    };
+    container.appendChild(btn);
+  });
+}
+
+function renderCurrentWeek() {
+  const week = allData.weeks[currentWeekIdx];
+  const prevWeek = currentWeekIdx > 0 ? allData.weeks[currentWeekIdx - 1] : null;
+  
+  renderSummary(week, prevWeek);
+  renderGrid('kr-grid', week.domestic, 'kr');
+  renderGrid('gl-grid', week.global, 'gl');
+  renderChanges(week, prevWeek);
+  renderMarketing(week);
+}
+
+function renderSummary(week, prevWeek) {
+  const newCount = [...week.domestic, ...week.global].filter(m => m.status === 'new').length;
+  const trendingCount = [...week.domestic, ...week.global].filter(m => m.status === 'trending').length;
+  const fadingCount = [...week.domestic, ...week.global].filter(m => m.status === 'fading').length;
+
+  document.getElementById('summary-bar').innerHTML = `
+    <div class="summary-chip"><span class="num">${newCount}</span>신규 등장</div>
+    <div class="summary-chip"><span class="num" style="color:var(--a4)">${trendingCount}</span>계속 유행 중</div>
+    <div class="summary-chip"><span class="num" style="color:var(--muted)">${fadingCount}</span>사그라드는 중</div>
+    <div class="summary-chip"><span class="num" style="color:var(--a5)">${allData.meta.total_weeks}</span>주 누적 데이터</div>
+  `;
+}
+
+const ACCS_KR = [
+  'linear-gradient(90deg,#ff3cac,#ff6b9d)',
+  'linear-gradient(90deg,#784ba0,#a855f7)',
+  'linear-gradient(90deg,#2b86c5,#06b6d4)',
+  'linear-gradient(90deg,#00f5d4,#06d6a0)',
+  'linear-gradient(90deg,#ffe45e,#fb923c)'
+];
+const ACCS_GL = [
+  'linear-gradient(90deg,#00f5d4,#0891b2)',
+  'linear-gradient(90deg,#a78bfa,#7c3aed)',
+  'linear-gradient(90deg,#f97316,#ef4444)',
+  'linear-gradient(90deg,#84cc16,#16a34a)',
+  'linear-gradient(90deg,#ffe45e,#f59e0b)'
+];
+
+function renderGrid(containerId, items, type) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = '';
+  const accs = type === 'kr' ? ACCS_KR : ACCS_GL;
+  
+  items.forEach((item, i) => {
+    const el = document.createElement('div');
+    el.className = 'mcard';
+    el.style.setProperty('--acc', accs[i % accs.length]);
+    
+    const statusLabel = {new: '🔥 NEW', trending: '📈 유행 중', fading: '📉 마무리'};
+    const statusClass = {new: 'status-new', trending: 'status-trending', fading: 'status-fading'};
+    const weeksText = item.weeks_trending > 1 ? `<div class="weeks-badge">⏱️ ${item.weeks_trending}주째 유행 중</div>` : '';
+    
+    el.innerHTML = `
+      <span class="hint">탭해서 자세히 ›</span>
+      <div class="mrank">${String(item.rank).padStart(2,'0')}</div>
+      <span class="badge ${type}">${type === 'kr' ? '국내' : '해외'}</span>
+      <span class="badge ${statusClass[item.status] || 'status-new'}">${statusLabel[item.status] || 'NEW'}</span>
+      <div class="cname">${item.name}</div>
+      <div class="cdesc">${item.short}</div>
+      <div class="corg">${item.origin}</div>
+      ${weeksText}
+    `;
+    el.onclick = () => openModal(item, type);
+    container.appendChild(el);
+  });
+}
+
+function renderChanges(week, prevWeek) {
+  renderChangeList('change-kr', week.domestic, prevWeek?.domestic, 'kr');
+  renderChangeList('change-gl', week.global, prevWeek?.global, 'gl');
+}
+
+function renderChangeList(containerId, items, prevItems, type) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = '';
+  
+  const prevNames = prevItems ? prevItems.map(i => i.name) : [];
+  
+  items.forEach(item => {
+    const el = document.createElement('div');
+    el.className = 'change-row';
+    
+    let tag, tagClass;
+    if (!prevItems || !prevNames.includes(item.name)) {
+      tag = '🔥 신규'; tagClass = 'tag-new';
+    } else {
+      const prevRank = prevNames.indexOf(item.name) + 1;
+      const rankDiff = prevRank - item.rank;
+      if (rankDiff > 0) { tag = `▲ ${rankDiff}`; tagClass = 'tag-up'; }
+      else if (rankDiff < 0) { tag = `▼ ${Math.abs(rankDiff)}`; tagClass = 'tag-down'; }
+      else { tag = '─ 유지'; tagClass = 'tag-same'; }
+    }
+    
+    el.innerHTML = `
+      <div class="change-rank">${String(item.rank).padStart(2,'0')}</div>
+      <div class="change-info">
+        <div class="name">${item.name}</div>
+        <div class="meta">${item.short}</div>
+      </div>
+      <span class="change-tag ${tagClass}">${tag}</span>
+    `;
+    container.appendChild(el);
+  });
+  
+  // 이번 주에 사라진 밈
+  if (prevItems) {
+    const currentNames = items.map(i => i.name);
+    prevItems.filter(p => !currentNames.includes(p.name)).forEach(gone => {
+      const el = document.createElement('div');
+      el.className = 'change-row';
+      el.style.opacity = '0.5';
+      el.innerHTML = `
+        <div class="change-rank" style="color:#555577">—</div>
+        <div class="change-info">
+          <div class="name" style="text-decoration:line-through;color:var(--muted)">${gone.name}</div>
+          <div class="meta">이번 주 TOP5 이탈</div>
+        </div>
+        <span class="change-tag tag-out">❌ 이탈</span>
+      `;
+      container.appendChild(el);
+    });
+  }
+}
+
+function renderMarketing(week) {
+  const container = document.getElementById('mk-list');
+  container.innerHTML = '';
+  
+  const allMemes = [...week.domestic, ...week.global];
+  
+  allMemes.forEach((item, i) => {
+    const type = i < 5 ? 'kr' : 'gl';
+    const el = document.createElement('div');
+    el.style.cssText = 'background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.1rem 1.3rem;margin-bottom:10px;cursor:pointer;transition:all .2s;position:relative;';
+    el.onmouseenter = () => el.style.borderColor = 'var(--a5)';
+    el.onmouseleave = () => el.style.borderColor = 'var(--border)';
+    el.innerHTML = `
+      <span class="hint" style="opacity:0;transition:opacity .2s">탭해서 상세 ›</span>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+        <span class="badge ${type}">${type === 'kr' ? '국내' : '해외'}</span>
+        <span style="font-weight:700;font-size:.95rem">${item.name}</span>
+      </div>
+      <div style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:8px">${item.marketing_tip}</div>
+      <div style="font-size:11px;color:var(--a5)">📌 플랫폼: ${item.platforms.join(' · ')}</div>
+    `;
+    el.onmouseenter = () => { el.style.borderColor = 'var(--a5)'; el.querySelector('.hint').style.opacity = '1'; };
+    el.onmouseleave = () => { el.style.borderColor = 'var(--border)'; el.querySelector('.hint').style.opacity = '0'; };
+    el.onclick = () => openModal(item, type);
+    container.appendChild(el);
+  });
+}
+
+function openModal(item, type) {
+  document.getElementById('m-rk').textContent = String(item.rank).padStart(2, '0');
+  document.getElementById('m-nm').textContent = item.name;
+  
+  const statusLabel = {new: '🔥 신규', trending: '📈 유행 중', fading: '📉 마무리'};
+  const statusClass = {new: 'status-new', trending: 'status-trending', fading: 'status-fading'};
+  document.getElementById('m-bd').innerHTML = `
+    <span class="badge ${type}">${type === 'kr' ? '국내 밈 🇰🇷' : '해외 밈 🌍'}</span>
+    <span class="badge ${statusClass[item.status]}">${statusLabel[item.status]}</span>
+  `;
+  
+  const body = document.getElementById('m-body');
+  body.innerHTML = '';
+  
+  const blocks = [
+    {l: '한 줄 설명', t: item.short},
+    {l: '출처 / 시작점', t: item.origin},
+    item.detail?.origin_story ? {l: '탄생 배경', t: item.detail.origin_story} : null,
+    item.detail?.why_viral ? {l: '왜 유행했나', t: item.detail.why_viral} : null,
+    item.detail?.usage ? {l: '실제 사용 예시', t: `<strong>${item.detail.usage}</strong>`} : null,
+    {l: '마케팅 활용 팁 📢', t: item.marketing_tip},
+    item.weeks_trending > 1 ? {l: '유행 기간', t: `<strong>${item.weeks_trending}주째</strong> 대시보드에 등재 중`} : null,
+  ].filter(Boolean);
+  
+  blocks.forEach(b => {
+    const el = document.createElement('div');
+    el.className = 'mblk';
+    el.innerHTML = `<div class="mlbl">${b.l}</div><div class="mtxt">${b.t}</div>`;
+    body.appendChild(el);
+  });
+  
+  if (item.platforms) {
+    const pb = document.createElement('div');
+    pb.className = 'mblk';
+    pb.innerHTML = `<div class="mlbl">주요 플랫폼</div><div class="ptags">${item.platforms.map(p => `<span class="ptag">${p}</span>`).join('')}</div>`;
+    body.appendChild(pb);
+  }
+  
+  document.getElementById('overlay').classList.add('show');
+}
+
+function closeOv(e) { if (e.target === document.getElementById('overlay')) closeOvD(); }
+function closeOvD() { document.getElementById('overlay').classList.remove('show'); }
+
+function swTab(i, btn) {
+  currentTab = i;
+  document.querySelectorAll('.tab').forEach(b => b.classList.remove('on'));
+  document.querySelectorAll('.panel').forEach((p, j) => p.classList.toggle('on', j === i));
+  btn.classList.add('on');
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeOvD(); });
+
+// 초기 로드
+loadData();
+</script>
+</body>
+</html>

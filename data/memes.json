@@ -1,0 +1,169 @@
+{
+  "meta": {
+    "title": "밈 트렌드 위클리 대시보드",
+    "description": "매주 월요일 자동 수집되는 국내/국외 밈 트렌드",
+    "last_updated": "2026-04-28",
+    "total_weeks": 1
+  },
+  "weeks": [
+    {
+      "week_id": "2026-04-28",
+      "week_label": "2026년 4월 4주차",
+      "collected_at": "2026-04-28T14:00:00+09:00",
+      "domestic": [
+        {
+          "rank": 1,
+          "name": "윤정아 챌린지 👩‍🏫",
+          "short": "중독성 폭발 피아노학원 릴스 챌린지",
+          "origin": "정이랑 유튜브 → 초등학생 릴스 → 고윤정 참여로 폭발",
+          "status": "new",
+          "weeks_trending": 1,
+          "platforms": ["인스타 릴스", "틱톡", "유튜브 쇼츠"],
+          "marketing_tip": "'(이름)아~ (장소)에서 (행동)하지 말랬지~' 구조로 브랜드 패러디. B급 감성 필수.",
+          "detail": {
+            "origin_story": "개그우먼 정이랑 유튜브 채널 <쇼팽피아노학원>의 '서윤정' 캐릭터에서 따온 밈. 초등학생 김지윤(@j1_xun3)이 챌린지로 릴스 올림.",
+            "why_viral": "힘 빠진 목소리 + 영혼 없는 춤의 언밸런스가 묘하게 중독됨. 배우 고윤정 참여로 폭발.",
+            "usage": "'윤정아~ 왜요쌤~ 피아노방에서 뭐 먹지 말랬지~ 죄송해요 쌤~ 뀨❤️'"
+          }
+        },
+        {
+          "rank": 2,
+          "name": "스트롱 스트롱 💪",
+          "short": "UFC 선수 김동현의 담담한 긍정 말투",
+          "origin": "유튜브 '매미킴' 스파링 장면 → 숏츠 바이럴",
+          "status": "new",
+          "weeks_trending": 1,
+          "platforms": ["유튜브 쇼츠", "X(트위터)", "인스타"],
+          "marketing_tip": "제품 장점을 담담하게 나열. 듀오링고 '공부 많이 된다 이거' 성공 사례.",
+          "detail": {
+            "origin_story": "전 UFC 선수 김동현 유튜브 '매미킴'에서 후배 훈련 중 담담한 말투가 댓글→숏츠→SNS 확산.",
+            "why_viral": "혐오·자극 없는 건강하고 긍정적인 말투. '내가 본 최고로 건강한 밈' 반응.",
+            "usage": "'오늘 스트레스 많이 받을 거야. 스트롱 스트롱 💪' / '운동 많이 된다' / '큰 경험이다'"
+          }
+        },
+        {
+          "rank": 3,
+          "name": "난리자베스 🎉",
+          "short": "'난리 났다'를 위트 있게 바꾼 표현",
+          "origin": "@oh_sangchu가 2025/12/31 '2026 유행어 배포' 선포",
+          "status": "new",
+          "weeks_trending": 1,
+          "platforms": ["인스타그램", "X(트위터)", "카카오톡"],
+          "marketing_tip": "설레는 소식을 '심장콩딱 난리자베스'로 전달. 'OO자베스'로 자체 변형도 가능.",
+          "detail": {
+            "origin_story": "인스타 크리에이터 오상추(@oh_sangchu)가 2025년 마지막 날 선포. 새해 알고리즘 폭발.",
+            "why_viral": "긍·부정 상관없이 사용 가능. 'OO자베스' 형태로 무한 변형 가능.",
+            "usage": "'심장콩딱 난리자베스' / '눈물홍수 난리자베스' / '소름돋음 난리자베스'"
+          }
+        },
+        {
+          "rank": 4,
+          "name": "장시간 비행 옆자리 ✈️",
+          "short": "선택 참여형 밸런스 게임 밈",
+          "origin": "X 유저 소소한 놀이 → 2026년 1월 전 플랫폼 점령",
+          "status": "new",
+          "weeks_trending": 1,
+          "platforms": ["X(트위터)", "인스타그램", "커뮤니티"],
+          "marketing_tip": "브랜드 제품 라인업으로 '우리 중 골라봐요' 포맷. 댓글 수 폭증 보장.",
+          "detail": {
+            "origin_story": "X 유저들이 비행기 좌석에 캐릭터 배치 후 '옆자리를 골라라' 형식으로 올리며 시작.",
+            "why_viral": "번호 하나만 댓글로 달면 참여 완료. 선택이 곧 자기소개.",
+            "usage": "'장시간 비행입니다. 옆자리를 골라주세요 ✈️ 1번/2번/3번/4번'"
+          }
+        },
+        {
+          "rank": 5,
+          "name": "대한민국 유행 훅훅 바뀌는 듯",
+          "short": "빠른 유행 사이클을 메타적으로 자조",
+          "origin": "X에서 유행 순환 비꼬는 글 → 2026년 3월 확산",
+          "status": "new",
+          "weeks_trending": 1,
+          "platforms": ["X(트위터)", "인스타그램", "커뮤니티"],
+          "marketing_tip": "'다음 유행은 우리 브랜드겠지' 형식 예고형 콘텐츠에 최적.",
+          "detail": {
+            "origin_story": "X에서 '두쫀쿠 유행 끝나가니까 봄동 비빔밥 유행함 / 그럼 다음은 무조건 ~겠지' 공감 폭발.",
+            "why_viral": "밈에 대한 밈. 유행 자체를 소재로 삼아 누구나 공감.",
+            "usage": "'대한민국 유행 진짜 훅훅 바뀌는 듯 / A 끝나가니까 B 유행함 / 다음은 무조건 C겠지'"
+          }
+        }
+      ],
+      "global": [
+        {
+          "rank": 1,
+          "name": "Brain Rot 2.0",
+          "short": "AI 생성 기괴 캐릭터 + 반복 멘트 뇌 녹이기",
+          "origin": "Italian Brain Rot(2025) 진화 → 다국적 확산",
+          "status": "new",
+          "weeks_trending": 1,
+          "platforms": ["TikTok", "YouTube Shorts", "Instagram"],
+          "marketing_tip": "브랜드 캐릭터를 B급 Brain Rot 스타일로 제작. 최대한 조잡해야 효과적.",
+          "detail": {
+            "origin_story": "2025 Italian Brain Rot에서 진화. 한국·브라질·아랍 버전까지 다국적 확산.",
+            "why_viral": "말이 안 되는 게 바로 매력. 디지털 과부하 시대의 역설적 편안함.",
+            "usage": "AI로 기괴한 캐릭터 생성 + 반복 멘트 + 조잡한 편집 = Brain Rot"
+          }
+        },
+        {
+          "rank": 2,
+          "name": "나니가 스키? (러브라이브)",
+          "short": "팬덤이 1년간 직접 키워낸 애니 챌린지",
+          "origin": "러브라이브 라디오 발언 → 팬 주도 1년 성장",
+          "status": "new",
+          "weeks_trending": 1,
+          "platforms": ["X(트위터)", "YouTube", "Instagram"],
+          "marketing_tip": "팬이 키운 브랜드 스토리텔링의 최고 레퍼런스.",
+          "detail": {
+            "origin_story": "러브라이브 라디오에서 유닛 발언 → 팬들이 1년간 키워 실제 무대·앨범·아시아 투어까지.",
+            "why_viral": "'나니가 스키~! (뭐가 좋아?)' 중독성 강한 대사. 팬 주도 IP 성장의 교과서.",
+            "usage": "'나니가 스키~!' / '○○보다 좋은 건 바로 너!'"
+          }
+        },
+        {
+          "rank": 3,
+          "name": "City Boy! / Wilson Lo siento!",
+          "short": "2026년 상반기 글로벌 챌린지 송",
+          "origin": "TikTok 오디오 기반 크로스컬처 챌린지",
+          "status": "new",
+          "weeks_trending": 1,
+          "platforms": ["TikTok", "Instagram Reels", "YouTube Shorts"],
+          "marketing_tip": "짧은 후크 오디오에 브랜드 상황 삽입. 15초 숏폼 최적화.",
+          "detail": {
+            "origin_story": "나무위키 2026년 인터넷 밈 분류 등재. 짧고 반복적인 후크가 전 세계 동시 확산.",
+            "why_viral": "누구나 따라 부를 수 있는 포맷. 나라마다 재해석 버전 무한 생산.",
+            "usage": "'City boy! City boy!' / 'Wilson! Lo siento!' 반복"
+          }
+        },
+        {
+          "rank": 4,
+          "name": "Skibidi / 67",
+          "short": "뜻 없는 단어가 올해의 단어로 등극",
+          "origin": "Dictionary.com 2025 올해의 단어 → 캠브리지 사전 등재",
+          "status": "trending",
+          "weeks_trending": 3,
+          "platforms": ["TikTok", "X(트위터)", "YouTube"],
+          "marketing_tip": "10대 타겟 콘텐츠에서 자연스럽게 활용. 직접 쓰기보단 크리에이터 협업 권장.",
+          "detail": {
+            "origin_story": "'Skibidi'는 Skibidi Toilet 애니에서, '67'은 래퍼 스크릴라 가사에서 유래.",
+            "why_viral": "의미 없는 단어가 올해의 단어 선정. 감정 공감·집단 정체성 표현이 더 중요해진 시대.",
+            "usage": "감탄사·강조어로 자유롭게 사용. '완전 skibidi하다' / '67이다' 형식"
+          }
+        },
+        {
+          "rank": 5,
+          "name": "Glaze (AI 아첨 신조어)",
+          "short": "GPT 과잉 친절 현상을 가리키는 신조어",
+          "origin": "GPT-4o 논란 → 샘 올트먼 X 발언 → 캠브리지 사전 등재",
+          "status": "new",
+          "weeks_trending": 1,
+          "platforms": ["X(트위터)", "LinkedIn", "커뮤니티"],
+          "marketing_tip": "'glaze 없이 솔직한 브랜드' 포지셔닝. 과장 없는 진정성 마케팅 키워드.",
+          "detail": {
+            "origin_story": "GPT-4o 과잉 아첨 논란에 샘 올트먼이 'X에서 맞아, 너무 glaze하지'라고 답하며 유행.",
+            "why_viral": "AI 시대 커뮤니케이션 언어. 2026 캠브리지 사전 등재.",
+            "usage": "'저 사람 완전 glaze하고 있어' / 'glaze 없이 진짜 피드백 줘'"
+          }
+        }
+      ]
+    }
+  ]
+}
