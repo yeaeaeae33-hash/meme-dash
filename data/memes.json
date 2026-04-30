@@ -2,8 +2,8 @@
   "meta": {
     "title": "밈 트렌드 위클리 대시보드",
     "description": "매주 월요일 자동 수집되는 국내/국외 밈 트렌드",
-    "last_updated": "2026-04-28",
-    "total_weeks": 1
+    "last_updated": "2026-04-30",
+    "total_weeks": 2
   },
   "weeks": [
     {
@@ -137,7 +137,7 @@
           "rank": 4,
           "name": "Skibidi / 67",
           "short": "뜻 없는 단어가 올해의 단어로 등극",
-          "origin": "Dictionary.com 2025 올해의 단어 → 캠브리지 사전 등재",
+          "origin": "[Dictionary.com](http://Dictionary.com) 2025 올해의 단어 → 캠브리지 사전 등재",
           "status": "trending",
           "weeks_trending": 3,
           "platforms": ["TikTok", "X(트위터)", "YouTube"],
@@ -161,6 +161,165 @@
             "origin_story": "GPT-4o 과잉 아첨 논란에 샘 올트먼이 'X에서 맞아, 너무 glaze하지'라고 답하며 유행.",
             "why_viral": "AI 시대 커뮤니케이션 언어. 2026 캠브리지 사전 등재.",
             "usage": "'저 사람 완전 glaze하고 있어' / 'glaze 없이 진짜 피드백 줘'"
+          }
+        }
+      ]
+    },
+    {
+      "week_id": "2026-05-04",
+      "week_label": "2026년 5월 1주차",
+      "collected_at": "2026-04-30T14:00:00+09:00",
+      "domestic": [
+        {
+          "rank": 1,
+          "name": "매끈매끈하다 / 푱푱하다 🎤",
+          "short": "한국어 형용사 랩 + 춤 챌린지 (수능 금지곡)",
+          "origin": "유튜브 '카니를 찾아서' EP.20 → 행복한피자빵 리믹스 → 챌린지 폭발",
+          "status": "trending",
+          "weeks_trending": 1,
+          "platforms": ["인스타 릴스", "틱톡", "유튜브 쇼츠"],
+          "marketing_tip": "제품의 표면·질감을 '매끈매끈/푱푱/울퉁불퉁' 3단 비교로 묘사. 뷰티·F&B·홈데코 최적.",
+          "detail": {
+            "origin_story": "2025-10-29 카니 유튜브 예능 '카니를 찾아서' EP.20에서 한국어 공부 중 형용사 랩+춤이 화제. 2025-11-04 '행복한피자빵' 리믹스 버전이 챌린지로 폭발.",
+            "why_viral": "'평평'을 '푱푱'으로 발음하는 의외성 + 리듬감. 수능 시즌과 겹치며 '수능 금지곡' 드립까지 확산. 트렌딩 점수 99점.",
+            "usage": "'매끈매끈하다 매끈매끈한~ 푱푱하다 푱푱한~ 울퉁불퉁하다 울퉁불퉁한~' / 시험 공부 중 집중 깨질 때 / 텍스처 묘사 캡션"
+          }
+        },
+        {
+          "rank": 2,
+          "name": "김동현 밈 💪 (스트롱 스트롱 진화형)",
+          "short": "현실적·냉철한 코칭 멘트 모음 (2주 연속)",
+          "origin": "유튜브 '매미킴' 스파링 → 클립·짤로 무한 확산",
+          "status": "trending",
+          "weeks_trending": 2,
+          "platforms": ["유튜브 쇼츠", "X(트위터)", "인스타", "커뮤니티"],
+          "marketing_tip": "'운동 많이 된다 / 큰 경험이다 / 예술이다' 톤으로 제품 평가. 과장 없는 담담함이 핵심. 듀오링고·B마트 사례 참고.",
+          "detail": {
+            "origin_story": "전 UFC 파이터 김동현이 운동·격투 콘텐츠에서 던지는 현실 평가 멘트들이 짧은 클립으로 잘려 SNS 전 플랫폼 확산. 트렌딩 점수 98점.",
+            "why_viral": "무조건 긍정도 자극도 아닌 '있는 그대로 짚어주는' 멘탈 코칭 톤. 자기객관화 욕구 + 건강한 밈 트렌드와 맞물려 2주째 트렌딩.",
+            "usage": "'오늘 스트레스 많이 받을 거야' / '이건 대화가 된다' / '진짜 잘하는 사람이다, 여기서 제일 잘하는 사람이야' / '예술이다, 예술'"
+          }
+        },
+        {
+          "rank": 3,
+          "name": "야르! 🎉",
+          "short": "기분 좋을 때 자동반사 감탄사 (리바이벌)",
+          "origin": "경남·부산권 옛 감탄사 → 2025년 류근일 '웃고리즘'에서 재유행",
+          "status": "trending",
+          "weeks_trending": 1,
+          "platforms": ["유튜브 쇼츠", "인스타 릴스", "X(트위터)", "카카오톡"],
+          "marketing_tip": "'(브랜드 혜택) → 야르!' 단발 외침 포맷. 먹방·할인 알림·당첨 발표 콘텐츠에 최적.",
+          "detail": {
+            "origin_story": "2006년 이전부터 경남·부산 지역에서 쓰이던 옛 감탄사. 2025년 코미디언 류근일이 유튜브 '웃고리즘' 먹방 연기에서 반복 사용하며 Z세대 사이 재유행. 트렌딩 점수 95점.",
+            "why_viral": "'앗싸·오예'와 비슷하지만 더 짧고 가벼움. 단발성으로 외치는 리듬이 숏폼·릴스에 최적화. 1위로 등극.",
+            "usage": "'치킨 사왔네? 야르!' / '가위바위보 이겼을 때 → 야르!' / '맛있는 거 보고 → 잘 먹겠습니다, 야르!'"
+          }
+        },
+        {
+          "rank": 4,
+          "name": "테토-에겐 성격 유형 🧬",
+          "short": "MBTI 다음 세대 성격 분류 밈",
+          "origin": "2021 네이버 블로그 → 2024 인스타툰 '내쪼' → 2025-2026 대유행",
+          "status": "trending",
+          "weeks_trending": 1,
+          "platforms": ["인스타그램", "X(트위터)", "유튜브", "커뮤니티"],
+          "marketing_tip": "'테토남/에겐녀에게 추천하는 OO' 포맷. 연애·뷰티·라이프스타일 카테고리 콘텐츠 폭발.",
+          "detail": {
+            "origin_story": "테스토스테론(테토) + 에스트로겐(에겐). 2021년 6월 네이버 블로그 '수성일기'에서 첫 제시 → 2024년 3월 인스타툰 작가 '내쪼'가 웹툰화 → 2025년 중반 '테토남·에겐녀'로 폭발 → 2026년 4월까지 지속.",
+            "why_viral": "MBTI 피로감 + 새 분류 욕구가 결합. '논리·직진(테토)' vs '공감·관계(에겐)' 단순 이분법으로 누구나 즉시 분류 가능. 트렌딩 점수 89점.",
+            "usage": "'나 완전 에겐녀임' / '한가인도 테토녀라더라' / '테토남이랑 에겐녀 케미 미쳤다'"
+          }
+        },
+        {
+          "rank": 5,
+          "name": "골반춤 💃",
+          "short": "댄스 본능 폭발을 과장 문장으로 표현",
+          "origin": "댄스 숏폼 + 과장 문장 캡션 결합",
+          "status": "trending",
+          "weeks_trending": 1,
+          "platforms": ["인스타 릴스", "틱톡", "X(트위터)"],
+          "marketing_tip": "BGM 광고나 음악 페스티벌 프로모션에 최적. '내 골반이 멈추지 않는 탓일까…' 캡션으로 활용.",
+          "detail": {
+            "origin_story": "춤 관련 숏폼에 과장된 문장 드립을 캡션으로 다는 형식이 댓글·인용으로 확산. 트렌딩 점수 82점.",
+            "why_viral": "동작 직접 따라하기 부담 없이, '문장만 인용'해도 참여 가능. 댄스 콘텐츠 진입장벽 제로화.",
+            "usage": "'노래만 나오면 내 골반이 멈추지 않는 탓일까…' / 댄스 짤·릴스 캡션 / 라이브 공연 후기"
+          }
+        }
+      ],
+      "global": [
+        {
+          "rank": 1,
+          "name": "Remember Who You Are 🦖",
+          "short": "현재 동물 vs 선사시대 조상 비교 밈",
+          "origin": "@vivid_ai TikTok AI 영상 → 2025-2026 대확산",
+          "status": "trending",
+          "weeks_trending": 1,
+          "platforms": ["TikTok", "Instagram Reels", "YouTube Shorts"],
+          "marketing_tip": "브랜드의 '원형(과거) vs 현재' 비교 콘텐츠. 라이온킹 OST 사용 시 정서 폭발. 헤리티지 브랜드에 최적.",
+          "detail": {
+            "origin_story": "TikTok @vivid_ai가 기린·고양이·이구아나 등 현재 동물이 사우로포드·검치호 등 선사시대 조상을 바라보는 AI 영상을 업로드. 디즈니 1994 라이온킹 'Remember Who You Are' 대사를 결합.",
+            "why_viral": "@bulletcereal '복(Bok)' 애니 700만뷰, @pokelokos 포켓몬 버전 360만뷰. 노스탤지어 + AI 시각효과 + 정체성 메시지의 삼박자. 2024 말부터 누적되어 2026년 4월까지 트렌딩 지속.",
+            "usage": "'Remember who you are' 캡션 + 현재 vs 과거(원형) 비교 영상 / 브랜드 헤리티지 회상 / 캐릭터 진화 시리즈"
+          }
+        },
+        {
+          "rank": 2,
+          "name": "Smiling Sunflower 🌻",
+          "short": "PvZ 해바라기로 '버티는 미소' 표현",
+          "origin": "Plants vs. Zombies 해바라기 캐릭터 → 2026 인스타·틱톡 확산",
+          "status": "new",
+          "weeks_trending": 1,
+          "platforms": ["TikTok", "Instagram", "Twitter/X"],
+          "marketing_tip": "어색한 상황·번아웃 공감 콘텐츠. '괜찮은 척' 직장인·학생 타겟 광고에 최적.",
+          "detail": {
+            "origin_story": "Plants vs. Zombies의 미소 짓는 해바라기 캐릭터가 '겉으론 웃지만 속은 무너지는' 감정을 표현하는 밈으로 부활. 2026년 4월 들어 인스타그램·TikTok에서 변형 버전 폭증.",
+            "why_viral": "어색·민망·번아웃 같은 미묘한 감정을 한 장으로 정확히 포착. 누구나 살면서 한 번씩 짓는 표정.",
+            "usage": "'When the permanent smile kicks in 🌻' / 회의 중 어색한 침묵 / 월요일 출근 / 친척 잔소리"
+          }
+        },
+        {
+          "rank": 3,
+          "name": "Corporate NPC 👔",
+          "short": "직장인의 반복적·각본 같은 일상을 NPC로 풍자",
+          "origin": "TikTok NPC 라이브 → Corporate 버전으로 확장",
+          "status": "trending",
+          "weeks_trending": 1,
+          "platforms": ["TikTok", "Instagram Reels", "LinkedIn"],
+          "marketing_tip": "B2B·HR·생산성 툴 광고에 최적. '당신을 NPC에서 벗어나게 해줄 OO' 포지셔닝.",
+          "detail": {
+            "origin_story": "게임 NPC 라이브 트렌드가 직장 버전으로 진화. 크리에이터들이 '회의·이메일·점심·퇴근'의 똑같은 대사·동작을 게임 NPC처럼 반복 연기.",
+            "why_viral": "MZ 직장인의 '내 삶이 스크립트 같다'는 공감대를 정확히 자극. 짧은 라이프사이클로 빠르게 휘발되지만 폭발력은 강함.",
+            "usage": "'Welcome to the office. *blink*' 반복 / 슬랙 메시지 자동응답 패러디 / 분기 회의 NPC 시리즈"
+          }
+        },
+        {
+          "rank": 4,
+          "name": "It's Gonna Be May 🎤",
+          "short": "5월 진입 시즌 밈 (NSYNC 'It's Gonna Be Me')",
+          "origin": "NSYNC 2000 히트곡 → 매년 5월 부활",
+          "status": "trending",
+          "weeks_trending": 1,
+          "platforms": ["TikTok", "Twitter/X", "Instagram"],
+          "marketing_tip": "5월 한정 프로모션·이벤트 알림에 최적. 4월 30일 ~ 5월 1일 사이 게시 타이밍이 황금.",
+          "detail": {
+            "origin_story": "저스틴 팀버레이크의 NSYNC 시절 'It's Gonna Be Me' 발음이 'It's Gonna Be May'처럼 들린다는 점에서 시작. 매년 4월 말~5월 초 SNS에서 자동 부활하는 시즌 밈으로 정착.",
+            "why_viral": "달력 트리거형 밈의 대표 사례. 노력 없이 시즌만 오면 알아서 트렌딩. 2026년 4월 30일 기준 다시 폭발 중.",
+            "usage": "'It's gonna be May 🎤' + 저스틴 팀버레이크 짤 / 5월 캠페인 티저 / 5월 이벤트 카운트다운"
+          }
+        },
+        {
+          "rank": 5,
+          "name": "I Just Hit the Jackpot 🎰",
+          "short": "작은 성취를 잭팟 터진 듯 자축하는 밈",
+          "origin": "애니 래퍼 GameboyJones 'I just hit the jackpot' 오디오",
+          "status": "new",
+          "weeks_trending": 1,
+          "platforms": ["TikTok", "Instagram Reels", "YouTube Shorts"],
+          "marketing_tip": "쿠폰·1+1·세일·당첨 알림에 활용. '소소한 행복'을 거창하게 포장하는 콘텐츠 톤이 핵심.",
+          "detail": {
+            "origin_story": "애니 래퍼 GameboyJones의 'I just hit the jackpot' 후크 오디오가 2026년 4월 들어 '작은 승리·소확행 자축' 영상에 대량 활용되며 바이럴.",
+            "why_viral": "큰 일이 아닌데 거창하게 자축하는 갭 코미디. 일상의 소소한 행운을 연출하기 좋은 BGM.",
+            "usage": "'주차 자리 발견 → I just hit the jackpot 🎰' / 1+1 발견 / 카페 마지막 디저트 획득"
           }
         }
       ]
