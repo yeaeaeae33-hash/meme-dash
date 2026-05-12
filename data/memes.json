@@ -2,8 +2,8 @@
   "meta": {
     "title": "밈 트렌드 위클리 대시보드",
     "description": "매주 월요일 전주 밈을 회고하며 누적 업데이트",
-    "last_updated": "2026-05-04",
-    "total_weeks": 2
+    "last_updated": "2026-05-11",
+    "total_weeks": 3
   },
   "weeks": [
     {
@@ -137,7 +137,7 @@
           "rank": 4,
           "name": "Skibidi / 67",
           "short": "뜻 없는 단어가 올해의 단어로 등극",
-          "origin": "[Dictionary.com](http://Dictionary.com) 2025 올해의 단어 → 캠브리지 사전 등재",
+          "origin": "Dictionary.com 2025 올해의 단어 → 캠브리지 사전 등재",
           "status": "trending",
           "weeks_trending": 3,
           "platforms": ["TikTok", "X(트위터)", "YouTube"],
@@ -320,6 +320,165 @@
             "origin_story": "저스틴 팀버레이크의 NSYNC 시절 'It's Gonna Be Me' 발음이 'It's Gonna Be May'처럼 들린다는 점에서 시작. 매년 4월 말~5월 초 SNS에서 자동 부활하는 시즌 밈으로 정착.",
             "why_viral": "달력 트리거형 밈의 대표 사례. 노력 없이 시즌만 오면 알아서 트렌딩. 2026년 5월 진입과 함께 다시 폭발.",
             "usage": "'It's gonna be May 🎤' + 저스틴 팀버레이크 짤 / 5월 캠페인 티저 / 5월 이벤트 카운트다운"
+          }
+        }
+      ]
+    },
+    {
+      "week_id": "2026-05-11",
+      "week_label": "2026년 5월 2주차",
+      "collected_at": "2026-05-12T11:00:00+09:00",
+      "domestic": [
+        {
+          "rank": 1,
+          "name": "매끈매끈하다 / 푱푱하다 🎤",
+          "short": "트렌딩 점수 99점, 국내 1위 등극 (2주 연속)",
+          "origin": "유튜브 '카니를 찾아서' EP.20 → 행복한피자빵 리믹스",
+          "status": "trending",
+          "weeks_trending": 2,
+          "platforms": ["인스타 릴스", "틱톡", "유튜브 쇼츠"],
+          "marketing_tip": "제품 텍스처 비교 콘텐츠 황금기. '우리 신제품 매끈매끈한데?' 한 줄로 릴스 후크 만들기. 뷰티·F&B 우선 타깃.",
+          "detail": {
+            "origin_story": "카니 유튜브 EP.20 형용사 랩+춤이 행복한피자빵 리믹스로 챌린지화. 5월 2주차 트렌딩 점수 99점으로 야르를 밀어내고 1위 등극. 수능 D-200 시즌과 결합해 '수능 금지곡' 드립 재가속.",
+            "why_viral": "'푱푱'이라는 비표준 발음의 의외성 + 따라하기 쉬운 3박자 리듬. 텍스처 묘사 어휘로 광고·리뷰 콘텐츠에 흡수되며 자연 확장.",
+            "usage": "'매끈매끈한~ 푱푱한~ 울퉁불퉁한~' 3종 비교 / 신제품 텍스처 광고 / 자기소개 '나는 매끈매끈한 사람'"
+          }
+        },
+        {
+          "rank": 2,
+          "name": "김동현 밈 💪",
+          "short": "현실 코칭 멘트 (3주 연속 트렌딩)",
+          "origin": "유튜브 '매미킴' 스파링 → 클립·짤 무한 확산",
+          "status": "trending",
+          "weeks_trending": 3,
+          "platforms": ["유튜브 쇼츠", "X(트위터)", "인스타", "커뮤니티"],
+          "marketing_tip": "직장인 멘탈·자기계발·운동 카테고리 브랜드의 '담담 코칭 카피' 정착. 듀오링고·올리브영·B마트가 이미 활용 중. 자극적 카피 톤 다운 트렌드.",
+          "detail": {
+            "origin_story": "전 UFC 파이터 김동현의 운동 코칭 클립이 4월 4주차부터 5월 2주차까지 3주 연속 TOP3 유지. 트렌딩 점수 98점, 'GOAT 밈' 평가 형성 중.",
+            "why_viral": "긍정/부정 모두 아닌 '담담한 사실 진술' 톤이 정신적 피로 시대의 안식처. '예술이다·운동 많이 된다·큰 경험이다'가 일반 어휘로 흡수됨.",
+            "usage": "'오늘 스트레스 많이 받을 거야' / '이건 대화가 된다' / '예술이다, 예술' / '큰 경험이다'"
+          }
+        },
+        {
+          "rank": 3,
+          "name": "야르! 🎉",
+          "short": "1위에서 3위로 순위 조정, 그러나 여전히 핫",
+          "origin": "경남·부산권 옛 감탄사 → 류근일 '웃고리즘' 재유행",
+          "status": "trending",
+          "weeks_trending": 2,
+          "platforms": ["유튜브 쇼츠", "인스타 릴스", "X(트위터)", "카카오톡"],
+          "marketing_tip": "당첨·할인·이벤트 알림의 마지막 한 글자. '쿠폰 도착! 야르!' 한 줄 카피 효과. 댓글창 반응 유도용 해시태그로도 활용.",
+          "detail": {
+            "origin_story": "경남·부산권 옛 감탄사가 코미디언 류근일 채널을 통해 부활. 5월 1주차 1위에서 2주차 3위로 한 단계 내려갔으나 트렌딩 점수 95점으로 여전히 🔥 상태.",
+            "why_viral": "0.5초 안에 끝나는 즉각 반응 표현이라 숏폼·라이브 댓글창에 최적화. '앗싸→오예→야르'로 세대별 감탄사 교체 진행 중.",
+            "usage": "'당첨! 야르!' / '집 도착, 야르~' / 가위바위보 승리 시"
+          }
+        },
+        {
+          "rank": 4,
+          "name": "테토-에겐 성격 유형 🧬",
+          "short": "MBTI 다음 세대 성격 분류 (2주 연속)",
+          "origin": "2021 네이버 블로그 → 2024 인스타툰 '내쪼' → 2025-2026 대유행",
+          "status": "trending",
+          "weeks_trending": 2,
+          "platforms": ["인스타그램", "X(트위터)", "유튜브", "커뮤니티"],
+          "marketing_tip": "'테토남이 좋아하는 OO / 에겐녀가 자주 찾는 OO' 카테고라이즈. 패션·뷰티·F&B의 페르소나 카피로 매출 직결. 인플루언서 협업 시 '테토 에디션 / 에겐 에디션' 라인 출시 검토.",
+          "detail": {
+            "origin_story": "테스토스테론·에스트로겐을 차용한 성격 분류가 5월 2주차에도 트렌딩 4위 유지. 점수 89점.",
+            "why_viral": "MBTI 16종 분류 피로감을 2종 분류로 단순화. 직진(테토) vs 공감(에겐) 이분법이 콘텐츠 제작 효율 극대화.",
+            "usage": "'완전 에겐녀 클리셰' / '테토남 친구한테 보내는 영상' / 연애·라이프 콘텐츠 페르소나"
+          }
+        },
+        {
+          "rank": 5,
+          "name": "골반춤 💃",
+          "short": "댄스 본능 폭발 문장 드립 (2주 연속)",
+          "origin": "댄스 숏폼 + 과장 문장 캡션",
+          "status": "trending",
+          "weeks_trending": 2,
+          "platforms": ["인스타 릴스", "틱톡", "X(트위터)"],
+          "marketing_tip": "음악·페스티벌·러닝 브랜드 광고 카피로 정착 중. '내 골반이 OO하는 탓일까' 패턴으로 변형 카피 가능. 댄서 인플루언서 협업 추천.",
+          "detail": {
+            "origin_story": "댄스 숏폼에 '내 골반이 멈추지 않는 탓일까…' 캡션이 5월 2주차에도 82점 유지. 트렌딩 5위로 안정적 누적.",
+            "why_viral": "춤을 못 추는 사람도 캡션 한 줄로 참여 가능. 댄스 콘텐츠 진입장벽 제로화.",
+            "usage": "'노래만 나오면 내 골반이 멈추지 않는 탓일까…' / 페스티벌 라인업 발표 댓글 / 운동 영상 캡션"
+          }
+        }
+      ],
+      "global": [
+        {
+          "rank": 1,
+          "name": "Saxophone Gets Louder 🎷",
+          "short": "1991년 'Boyz n the Hood' OST로 불길한 예감 알리는 밈",
+          "origin": "2025-12-30 @foreverhumblemarc96 TikTok → 2026년 1월~5월 글로벌 폭발",
+          "status": "trending",
+          "weeks_trending": 1,
+          "platforms": ["TikTok", "Instagram Reels", "YouTube Shorts"],
+          "marketing_tip": "'평범한 일상 → 갑작스러운 사건' 클리프행어 광고에 최적. 음원만 깔아도 자동으로 코미디 톤 형성. 보험·B2B SaaS의 'OO 없으면 색소폰 들린다' 캠페인 가능.",
+          "detail": {
+            "origin_story": "1991년 영화 'Boyz n the Hood'의 클라이맥스 색소폰 OST. 2025년 12월 30일 TikTok @foreverhumblemarc96이 '90s 후드 영화 톤'으로 패러디한 영상이 일주일 만에 80만 뷰 돌파. 2026년 5월까지 글로벌 누적 폭발 중.",
+            "why_viral": "'곧 일이 터질 것 같다'는 보편적 직감을 한 줄 음원으로 정리. 영상 제작 부담 거의 없음 — 색소폰 음원만 깔면 완성.",
+            "usage": "'POV: 일상이 평화로워졌는데… 🎷 saxophones getting louder' / 사고 직전·상사 호출 직전 등 클리프행어 콘텐츠"
+          }
+        },
+        {
+          "rank": 2,
+          "name": "Chill Guy 🐕",
+          "short": "후드티+청바지 강아지 캐릭터, '난 그냥 chill한 사람' 무브먼트",
+          "origin": "2023-10-04 Phillip Banks Twitter → 2024-08 TikTok 바이럴 → 2026 글로벌 정착",
+          "status": "trending",
+          "weeks_trending": 1,
+          "platforms": ["TikTok", "Instagram", "X(트위터)", "Reddit"],
+          "marketing_tip": "'스트레스 없는 브랜드' 포지셔닝의 표준. 아디다스·우버이츠가 이미 활용. 라이트한 B2C 캠페인의 마스코트로 차용 가능.",
+          "detail": {
+            "origin_story": "아티스트 Phillip Banks가 2023년 10월 트위터에 올린 'my new character. his whole deal is he's a chill guy that lowkey doesn't give a fuck' 캐릭터. 2024년 8월 TikTok 슬라이드쇼로 폭발 → 2026년 5월까지 'social media movement' 위상.",
+            "why_viral": "'어색하거나 두렵거나 이상한 선택을 해도 → 난 그냥 chill한 사람이라서'라는 감정 해소 코드. 코인($CHILLGUY)·기업 광고로까지 확장.",
+            "usage": "곤란한 상황 캡션에 'just a chill guy' / 브랜드 인스타 보이스 톤 / 잘못된 결정 자조"
+          }
+        },
+        {
+          "rank": 3,
+          "name": "Nothing Beats a Jet2 Holiday ✈️",
+          "short": "영국 항공사 광고 음원이 재난·실패 영상에 깔리는 역설 밈",
+          "origin": "Jet2 2022년 광고 → 2025년 중반 TikTok 130만+ 영상 → 2026년 5월 글로벌 확산",
+          "status": "trending",
+          "weeks_trending": 1,
+          "platforms": ["TikTok", "Instagram Reels", "YouTube Shorts"],
+          "marketing_tip": "여행·여름 시즌 캠페인의 '아이러니 카피' 정석. '비행기 결항 → Nothing beats a Jet2 holiday' 류 반어법으로 클릭률 폭증. Jet2처럼 브랜드 자체가 밈을 끌어안는 자세가 핵심.",
+          "detail": {
+            "origin_story": "Jet2holidays 2022 광고에 Jess Glynne 'Hold My Hand'와 Zoë Lister 보이스오버 결합. 2025년 중반까지 TikTok 130만 영상·해시태그 200만+. 2026년 봄~여름 시즌 진입과 함께 다시 폭발.",
+            "why_viral": "광고의 화창한 톤과 영상 속 '비 오는 해변·짐 분실·동물 난동' 같은 재난의 대비가 즉각 웃음 코드. Jet2 자체가 밈을 공식적으로 끌어안고 챌린지·바우처 캠페인 진행.",
+            "usage": "여행 실패담 + 음원 자동 매칭 / '결혼식 망함 → Nothing beats…' / 여름 휴가 카운트다운 콘텐츠"
+          }
+        },
+        {
+          "rank": 4,
+          "name": "Switching AirPods Fit Check 🎧",
+          "short": "에어팟 잘못 바꿔 끼었더니 음악이 룩에 딱 맞는 '핏체크' 트렌드",
+          "origin": "2026년 4월~5월 TikTok 유행",
+          "status": "new",
+          "weeks_trending": 1,
+          "platforms": ["TikTok", "Instagram Reels"],
+          "marketing_tip": "오디오·뮤직·패션 브랜드의 '룩 vs 사운드' 매칭 콘텐츠로 직결. 음악 스트리밍 광고에서 '오늘의 룩에 맞는 플레이리스트' 포맷 차용 가능.",
+          "detail": {
+            "origin_story": "에어팟을 누군가와 실수로 바꿔 끼었더니 들리는 음악이 그 사람의 옷차림과 정확히 매칭된다는 컨셉의 핏체크 영상. 2026년 4월부터 5월 2주차까지 빠르게 증가.",
+            "why_viral": "패션 + 음악 + AI 매칭 감성이 한 영상에 압축. 30초 안에 '룩 → 사운드' 반전 효과로 시청 완료율이 높음.",
+            "usage": "'when I switched airpods with the chill guy at the cafe…' / 패션 룩북 + 추천 음원 / 음원 플랫폼 광고"
+          }
+        },
+        {
+          "rank": 5,
+          "name": "It's Gonna Be May 🎤",
+          "short": "5월 시즌 밈 마지막 주차 (NSYNC)",
+          "origin": "NSYNC 2000 'It's Gonna Be Me' → 매년 4월 말~5월 초 부활",
+          "status": "fading",
+          "weeks_trending": 2,
+          "platforms": ["TikTok", "Twitter/X", "Instagram"],
+          "marketing_tip": "5월 중순부터는 빠르게 효력 감소 — 이번 주가 마지막 활용 타이밍. 6월 캠페인 티저로 '바통 터치'하는 콘텐츠 권장.",
+          "detail": {
+            "origin_story": "저스틴 팀버레이크 'It's Gonna Be Me' 발음 패러디. 매년 5월 1일 트리거로 부활하는 달력 밈. 2026년 5월 1주차 정점 후 2주차 fading 단계 진입.",
+            "why_viral": "'시즌 자체가 트리거'인 자동 부활 밈. 5월 둘째 주가 지나면 다음 해까지 휴면.",
+            "usage": "5월 중순 한정 카피 / 6월 캠페인 카운트다운 '~ It WAS May' 변주"
           }
         }
       ]
